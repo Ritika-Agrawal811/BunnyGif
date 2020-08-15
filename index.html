@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gif</title>
+    <style type="text/css">
+    
+        .gif{
+            margin-top:15%;
+            margin-left:30%;
+        }
+    
+        .face{
+            width:180px;
+            height:145px;
+            border-radius:50%;
+            border:3px solid brown;
+            position:absolute;
+            background-color:white;
+            z-index:5;
+            animation : animateFace 0.2s linear infinite;
+
+            
+        }
+        
+        .ears{
+            position:absolute;
+            width:57px;
+            height:200px;
+            border:3px solid brown;
+            border-radius:50%/50px 50px 50px;
+            transform:rotate(14deg);
+            margin-left:-30px;
+            z-index:1;
+        }
+        
+        .left{
+            animation: leftEar 0.2s linear infinite;
+        }
+        .ears:before{
+            content:"";
+            position:absolute;
+            width:30px;
+            height:110px;
+            background-color:#ff9999;
+            border-radius:50%/30px 30px 30px 30px;
+            margin-top:65px;
+            margin-left:5px;
+            
+        }
+        
+        .left:before{
+            margin-left:20px;
+        }
+    
+        .right{
+            margin-left:160px;
+            transform:rotate(-14deg);
+            animation: rightEar 0.2s linear infinite;
+        }
+        
+        .eyes{
+            width:20px;
+            height:20px;
+            background-color:brown;
+            position:absolute;
+            border-radius:50%;
+        }
+        
+        .eyes:before , .eyes:after{
+            content:"";
+            position:absolute;
+            width:8px;
+            height:4.5px;
+            background-color:#fff;
+            border-radius:50%;
+            margin-top:5px;
+            margin-left:7px;
+        }
+        
+        .eyes:after{
+            margin-top:11px;
+            margin-left:4px;
+        }
+        
+        
+        
+        .eyeLeft{
+            margin-top:55px;
+            margin-left:46px;
+        }
+        
+        .eyeRight{
+            margin-top:55px;
+            margin-left:112px;
+        }
+        
+        .mouth{
+            width:28px;
+            height:28px;
+            background-color:brown;
+            position:absolute;
+            border-radius:50%;
+            margin-top:85px;
+            margin-left:75px;
+            z-index:6;
+        }
+        
+        .mouth:before{
+            content:"";
+            position:absolute;
+            width:15px;
+            height:10px;
+            background-color:#ff9999;
+            margin-top:15px;
+            margin-left:7px;
+            border-radius:50%;
+            
+        }
+        
+        .uppercurve{
+            position:absolute;
+            width:14px;
+            height:14px;
+            background-color:#fff;
+            border-radius:50%;
+            margin-top:82px;
+            margin-left:73px;
+            z-index:8;
+        }
+        
+        .curveRight{
+            margin-left:91px;
+        }
+        
+        .nose{
+            position:absolute;
+            width:16px;
+            height:10px;
+            background-color:brown;
+            margin-top:76px;
+            margin-left:81px;
+            border-radius:50%;
+            z-index:10;
+            
+        }
+        
+        .faceShape{
+            width:180px;
+            height:20px;
+            position:absolute;
+            background-color:#fff;
+            margin-top:25px;
+        }
+        
+        .hair{
+            position:absolute;
+            margin-left:75px;
+            margin-top:-15px;
+            z-index:15;
+            animation: animateHair 0.2s linear infinite;
+            
+        }
+        
+        .hair1 , .hair3{
+            width:15px;
+            height:30px;
+            background-color:#fff;
+            border-radius:50%;
+            transform:rotate(-25deg);
+            position:absolute;
+            border:3px solid brown;
+        }
+        
+        .hair2{
+            width:20px;
+            height:30px;
+            background-color:#fff;
+            border-radius:50%;
+            position:absolute;
+            margin-left:10px;
+            margin-top:4px;
+            border-top:3px solid brown;
+            border-left:2px solid #fff;
+            border-right:2px solid #fff;
+            z-index:20;
+        }
+        
+        .hair3{
+            transform:rotate(25deg);
+            margin-left:22px;
+        }
+        
+        .body{
+            position:absolute;
+            width:80px;
+            height:80px;
+            border:3px solid brown;
+            margin-top:120px;
+            margin-left:50px;
+            border-radius:50%/35px 35px 20px 20px;
+                
+        }
+        
+        .body:before , .body:after{
+            content:"";
+            position:absolute;
+            width:15px;
+            height:25px;
+            background-color:#fff;
+            border-radius:50%;
+            margin-top:60px;
+            margin-left:3px;
+            border:3px solid brown;
+            transform: rotate(10deg);
+        }
+        
+        .body:after{
+
+            margin-left:58px;
+            transform: rotate(-10deg);
+        }
+        
+        .bodyShape{
+            width:75px;
+            height:20px;
+            background-color:#fff;
+            position:absolute;
+            margin-top:50px;
+            margin-left:3px;
+            z-index:30;
+        }
+        
+        .hands{
+
+            position:absolute;
+            width:15px;
+            height:30px;
+            background-color:#fff;
+            border-radius:30%;
+            z-index:30;
+            border:2px solid brown;
+            border-bottom:2px solid #fff;
+            margin-top:10px;
+           
+        }
+        
+        .hands:before{
+            content:"";
+            position:absolute;
+            width:20px;
+            height:12px;
+            background-color:#fff;
+            border-radius:40%;
+            margin-top:-9px;
+            border:2px solid brown;
+
+            
+        }
+        
+        .hands:after{
+            content:"";
+            position:absolute;
+            width:18px;
+            height:10px;
+            background-color:#ff9999;
+            border-radius:40%;
+            margin-top:-9px;
+            border:2px solid brown;
+            
+            
+            
+        }
+        
+        .left-hand:before , .left-hand:after{
+            margin-left:-8px;
+            transform:rotate(60deg); 
+            border-right:2px solid #fff;
+            animation: leftHand 0.2s linear infinite;
+
+        }
+        
+        .left-hand:after{
+            margin-left:-7px;
+            
+        }
+        
+        .right-hand:before , .right-hand:after{
+            margin-left:-1px; 
+            transform:rotate(-60deg); 
+            border-left:2px solid #fff;
+            animation: rightHand 0.2s linear infinite;
+
+        }
+        
+        .right-hand:after{
+            margin-left:1px;
+         
+        }
+        
+        .left-hand{
+            margin-left:10px;
+             transform:rotate(60deg);
+            animation: leftHandAnimate 0.2s linear infinite;
+        }
+        
+           .right-hand{
+            margin-left:50px;
+             transform:rotate(-60deg);
+                animation: rightHandAnimate 0.2s linear infinite;
+        }
+    
+        .eraseLine{
+            position:absolute;
+            width:10px;
+            height:10px;
+            background-color:#fff;
+            border-radius:50%;
+            margin-top:23px;
+            margin-left:35px;
+            z-index:40;
+        }
+        
+        .blush{
+            position:absolute;
+            z-index:10;
+            margin-top:90px;
+            margin-left:25px;
+            
+        }
+        
+        .blushRight{
+            margin-left:130px;
+        }
+        
+        .blush1 , .blush2 , .blush3{
+            width:3px;
+            height:20px;
+            background-color:#ff9999;
+            transform:rotate(40deg);
+            border-radius:30%;
+            position:absolute;
+        }
+        
+        .blush2{
+            margin-left:10px;
+        }
+        
+        .blush3{
+            margin-left:20px;
+        }
+        
+        .content{
+            margin-left:400px;
+            margin-top:250px;
+            position:absolute;
+            color:#0000ff;
+        }
+        
+        .content p{
+            font-size:20px;
+            color:#000;
+            font-weight:bold;
+            letter-spacing:1px;
+        }
+        
+        
+        @keyframes leftHand{
+            0%{
+                transform:rotate(60deg);
+                 margin-top:-9px;
+            }
+            
+            100%{
+                transform:rotate(30deg);
+                margin-top:-5px;
+            }
+        }
+        
+           @keyframes rightHand{
+            0%{
+                transform:rotate(-60deg);
+                 margin-top:-9px;
+            }
+            
+            100%{
+                transform:rotate(-30deg);
+                margin-top:-5px;
+            }
+        }
+        
+        @keyframes leftHandAnimate {
+             0%{
+                 transform:rotate(60deg);
+            }
+            
+            100%{
+               transform:rotate(50deg);
+            }
+        }
+        
+          @keyframes rightHandAnimate {
+             0%{
+                 transform:rotate(-60deg);
+            }
+            
+            100%{
+               transform:rotate(-50deg);
+            }
+        }
+        
+        @keyframes animateFace{
+            100%{
+                margin-top:5px;
+            }
+        }
+        
+          @keyframes animateHair{
+            100%{
+                margin-top:0.05px;
+            }
+        }
+        
+        @keyframes leftEar{
+             0%{
+                 transform:rotate(14deg);
+            }
+            
+            100%{
+               transform:rotate(24deg);
+
+            }
+        }
+        
+          @keyframes rightEar{
+             0%{
+                 transform:rotate(-14deg);
+            }
+            
+            100%{
+               transform:rotate(-24deg);
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gif">
+       <div class="ears left"></div>
+       <div class="hair">
+           <div class="hair1"></div>
+           <div class="hair2"></div>
+           <div class="hair3"></div>
+       </div>
+        <div class="face">
+          <div class="blush">
+              <div class="blush1"></div>
+              <div class="blush2"></div>
+              <div class="blush3"></div>
+          </div>
+           <div class="blush blushRight">
+              <div class="blush1"></div>
+              <div class="blush2"></div>
+              <div class="blush3"></div>
+          </div>
+           <div class="faceShape"></div>
+            <div class="eyes eyeLeft"></div>
+            <div class="eyes eyeRight"></div>
+            <div class="nose"></div>
+            <div class="uppercurve"></div>
+            <div class="uppercurve curveRight"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="ears right"></div>
+        <div class="body">
+          <div class="eraseLine"></div>
+           <div class="hands left-hand"></div>
+           <div class="hands right-hand"></div>
+            <div class="bodyShape"></div>
+        </div>
+    </div>
+    
+    <div class="content"><h1>Happy Birthday Virti!!</h1>
+    <p>Tu aisi hi cute hai ki main ruk nahi <br>paayi yeh banane ke liye</p></div>
+</body>
+</html>
